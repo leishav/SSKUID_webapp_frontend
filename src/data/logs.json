@@ -1,0 +1,26 @@
+[
+  {
+    "time": "10:14:22",
+    "level": "INFO",
+    "deviceId": "DEV-001",
+    "message": "works"
+  },
+  {
+    "time": "10:15:03",
+    "level": "WARN",
+    "deviceId": "DEV-003",
+    "message": "retrying"
+  },
+  {
+    "time": "10:16:47",
+    "level": "ERROR",
+    "deviceId": "DEV-007",
+    "message": "lost connection"
+  },
+  {
+    "time": "10:18:10",
+    "level": "INFO",
+    "deviceId": "DEV-004",
+    "message": "Firmware check completed"
+  }
+]

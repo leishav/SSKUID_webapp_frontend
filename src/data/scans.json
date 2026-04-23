@@ -1,0 +1,26 @@
+[
+  {
+    "time": "10:20:11",
+    "deviceId": "DEV-001",
+    "sku": "SKU-100245",
+    "result": "Success"
+  },
+  {
+    "time": "10:21:05",
+    "deviceId": "DEV-002",
+    "sku": "SKU-100246",
+    "result": "Failed"
+  },
+  {
+    "time": "10:21:48",
+    "deviceId": "DEV-006",
+    "sku": "SKU-100247",
+    "result": "Success"
+  },
+  {
+    "time": "10:22:17",
+    "deviceId": "DEV-009",
+    "sku": "SKU-100248",
+    "result": "Success"
+  }
+]

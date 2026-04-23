@@ -1,0 +1,26 @@
+[
+  {
+    "date": "2026-04-14 09:45",
+    "target": "GUI Update",
+    "version": "1.1.1",
+    "status": "Succeeded"
+  },
+  {
+    "date": "2026-04-14 08:30",
+    "target": "DEV-001",
+    "version": "1.1.0",
+    "status": "Succeeded"
+  },
+  {
+    "date": "2026-04-14 08:10",
+    "target": "DEV-003",
+    "version": "db:1.2.1",
+    "status": "Succeeded"
+  },
+  {
+    "date": "2026-04-14 07:55",
+    "target": "DEV-007",
+    "version": "software:1.1.0",
+    "status": "Failed"
+  }
+]

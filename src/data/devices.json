@@ -1,0 +1,77 @@
+[
+    {
+        "id": "DEV-001",
+        "name": "Atum",
+        "softwareVersion": "1.1.0",
+        "dbVersion": "1.2.1",
+        "firmwareVersion": "1.1.0",
+        "ipAddress": "172.16.3.140"
+    },
+    {
+
+        "id": "DEV-002",
+        "name": "Ra",
+        "softwareVersion": "1.1.0",
+        "dbVersion": "1.2.1",
+        "firmwareVersion": "1.1.0",
+        "ipAddress": "172.16.2.165"
+    },
+    {
+        "id": "DEV-003",
+        "name": "Anubis",
+        "softwareVersion": "1.1.0",
+        "dbVersion": "1.2.1",
+        "firmwareVersion": "1.1.0",
+        "ipAddress": "172.16.1.216"
+    },
+    {
+        "id": "DEV-004",
+        "name": "Osiris",
+        "softwareVersion": "1.1.0",
+        "dbVersion": "1.2.1",
+        "firmwareVersion": "1.1.0",
+        "ipAddress": "172.16.0.195"
+    },
+    {
+        "id": "DEV-005",
+        "name": "Thoth",
+        "softwareVersion": "1.1.0",
+        "dbVersion": "1.2.1",
+        "firmwareVersion": "1.1.0",
+        "ipAddress": "172.16.3.218"
+    },
+    {
+        "id": "DEV-006",
+        "name": "Sekhmet",
+        "softwareVersion": "1.1.0",
+        "dbVersion": "1.2.1",
+        "firmwareVersion": "1.1.0",
+        "ipAddress": "172.16.2.230"
+    },
+    {
+        "id": "DEV-007",
+        "name": "Set",
+        "softwareVersion": "1.1.0",
+        "dbVersion": "1.2.1",
+        "firmwareVersion": "1.1.0",
+        "ipAddress": "172.16.2.14"
+    },
+    {
+        "id": "DEV-008",
+        "name": "Sobek",
+        "softwareVersion": "1.1.0",
+        "dbVersion": "1.2.1",
+        "firmwareVersion": "1.1.0",
+        "ipAddress": "172.16.0.160"
+    },
+    {
+        "id": "DEV-009",
+        "name": "Isis",
+        "softwareVersion": "1.1.0",
+        "dbVersion": "1.2.1",
+        "firmwareVersion": "1.1.0",
+        "ipAddress": "172.16.0.221"
+    }
+
+
+]
