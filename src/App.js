@@ -15,7 +15,7 @@ const tabs = [
   { to: "/scans", label: "Scans" }
 ];
 
-  // adding test comment
+  // adding test comment for committing
 
 
 export default function App() {
