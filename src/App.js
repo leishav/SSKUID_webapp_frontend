@@ -12,7 +12,7 @@ const tabs = [
   { to: "/", label: "Devices" },
   { to: "/deployments", label: "Deployments" },
   { to: "/logs", label: "Logs" },
-  { to: "/scans", label: "Scans" }
+  { to: "/scans", label: "Scanss" }
 ];
 
   // adding test comment
