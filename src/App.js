@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
 import starterDevices from "./data/devices.json";
@@ -12,22 +12,42 @@ const tabs = [
   { to: "/", label: "Devices" },
   { to: "/deployments", label: "Deployments" },
   { to: "/logs", label: "Logs" },
-  { to: "/scans", label: "Scanss" }
+  { to: "/scans", label: "Scans" }
 ];
 
-  // adding test comment for committing
+const THEME_KEY = "theme";
+function getInitialTheme() {
+  const saved = localStorage.getItem(THEME_KEY);
+  if (saved === "dark" || saved === "light") return saved;
+  return document.documentElement.classList.contains("dark") ? "dark" : "light";
+}
+
+ 
 
 
 export default function App() {
   const [devices, setDevices] = useState(starterDevices);
+  const [theme, setTheme] = useState(getInitialTheme);
+
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", theme === "dark");
+    localStorage.setItem(THEME_KEY, theme);
+  }, [theme]);
 
   return (
     <div className="app">
-      <header className="header header-row">
+      <header className="header header-row flex items-start justify-between gap-4">
         <div>
-          <h1>SSKUID Dashboard</h1>
-          <p>Simple SKUID devices</p>
+          <h1>Simple SKUID Dashboard</h1>
         </div>
+
+        <button
+          type = "button"
+          className="btn-secondary"
+          onClick={() => setTheme((t) => (t === "dark" ? "light" : "dark"))}
+        >
+          {theme === "dark" ? "Light mode" : "Dark mode"}
+        </button>
       </header>
 
       <TopTabs tabs={tabs} />
