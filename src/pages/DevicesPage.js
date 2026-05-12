@@ -295,9 +295,12 @@ export default function DevicesPage({
   return (
     <>
       {/* Top-level action: open the add/edit form */}
-      <button className="add-device-btn" onClick={handleStartAddDevice}>
-        ADD DEVICE
-      </button>
+      <div className="flex justify-start">
+        <button className="btn-primary mb-6" onClick={handleStartAddDevice}>
+          ADD DEVICE
+        </button>
+      </div>
+        
 
       {/* Add/Edit form (same form reused; `editingDeviceId` decides mode) */}
       {showForm && (
@@ -348,13 +351,13 @@ export default function DevicesPage({
               onChange={handleChange}
             />
 
-            <div className="form-actions">
-              <button type="submit">
+            <div className="mt-4 flex items-center gap-3 flex-wrap">
+              <button className="btn-secondary">
                 {editingDeviceId ? "Update Device" : "Save Device"}
               </button>
               <button
                 type="button"
-                className="secondary-btn"
+                className="btn-secondary"
                 onClick={() => {
                   setShowForm(false);
                   setEditingDeviceId(null);
