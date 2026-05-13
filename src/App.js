@@ -7,12 +7,14 @@ import DeploymentsPage from "./pages/DeploymentsPage";
 import DevicesPage from "./pages/DevicesPage";
 import LogsPage from "./pages/LogsPage";
 import ScansPage from "./pages/ScansPage";
+import { Authenticator } from "@aws-amplify/ui-react";
+import "@aws-amplify/ui-react/styles.css";
 
 const tabs = [
   { to: "/", label: "Devices" },
   { to: "/deployments", label: "Deployments" },
   { to: "/logs", label: "Logs" },
-  { to: "/scans", label: "Scans" }
+  { to: "/scans", label: "Scans" },
 ];
 
 const THEME_KEY = "theme";
@@ -21,9 +23,6 @@ function getInitialTheme() {
   if (saved === "dark" || saved === "light") return saved;
   return document.documentElement.classList.contains("dark") ? "dark" : "light";
 }
-
- 
-
 
 export default function App() {
   const [devices, setDevices] = useState(starterDevices);
@@ -35,33 +34,51 @@ export default function App() {
   }, [theme]);
 
   return (
-    <div className="app">
-      <header className="header header-row flex items-start justify-between gap-4">
-        <div>
-          <h1>Simple SKUID Dashboard</h1>
-        </div>
+    <div className="auth-wrapper">
+      <Authenticator>
+        {({ signOut, user }) => (
+          <div className="app">
+            <header className="header header-row flex items-start justify-between gap-4">
+              <div>
+                <h1>Simple SKUID Dashboard</h1>
+              </div>
 
-        <button
-          type = "button"
-          className="btn-secondary"
-          onClick={() => setTheme((t) => (t === "dark" ? "light" : "dark"))}
-        >
-          {theme === "dark" ? "Light mode" : "Dark mode"}
-        </button>
-      </header>
+              <div className="flex gap-2">
+                {/* Sign out button */}
+                <button
+                  type="button"
+                  className="btn-secondary"
+                  onClick={signOut}
+                >
+                  Sign Out ({user.username})
+                </button>
 
-      <TopTabs tabs={tabs} />
+                {/* theme toggle */}
+                <button
+                  type="button"
+                  className="btn-secondary"
+                  onClick={() => setTheme((t) => (t === "dark" ? "light" : "dark"))}
+                >
+                  {theme === "dark" ? "Light mode" : "Dark mode"}
+                </button>
+              </div>
+            </header>
 
-      <Routes>
-        <Route
-          path="/"
-          element={<DevicesPage devices={devices} setDevices={setDevices} />}
-        />
-        <Route path="/deployments" element={<DeploymentsPage />} />
-        <Route path="/logs" element={<LogsPage />} />
-        <Route path="/scans" element={<ScansPage />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
+            <TopTabs tabs={tabs} />
+
+            <Routes>
+              <Route
+                path="/"
+                element={<DevicesPage devices={devices} setDevices={setDevices} />}
+              />
+              <Route path="/deployments" element={<DeploymentsPage />} />
+              <Route path="/logs" element={<LogsPage />} />
+              <Route path="/scans" element={<ScansPage />} />
+              <Route path="*" element={<Navigate to="/" replace />} />
+            </Routes>
+          </div>
+        )}
+      </Authenticator>
     </div>
   );
 }
