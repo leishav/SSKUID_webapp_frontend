@@ -34,11 +34,11 @@ export default function App() {
   }, [theme]);
 
   return (
-    <div className="auth-wrapper" style={{ width: '100% '}}>
+    <div className="auth-wrapper">
       <Authenticator>
         {({ signOut, user }) => (
           <div className="app">
-            <header className="app" style={{ width: '100%' }}>
+            <header className="header header-row flex items-start justify-between gap-4">
               <div>
                 <h1>Simple SKUID Dashboard</h1>
               </div>
@@ -50,7 +50,7 @@ export default function App() {
                   className="btn-secondary"
                   onClick={signOut}
                 >
-                  Sign Out ({user.signInDetails?.loginId})
+                  Sign Out
                 </button>
 
                 {/* theme toggle */}
