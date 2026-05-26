@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
-import starterDevices from "./data/devices.json";
+// import starterDevices from "./data/devices.json";
 import TopTabs from "./components/TopTabs";
 import DeploymentsPage from "./pages/DeploymentsPage";
 import DevicesPage from "./pages/DevicesPage";
@@ -25,7 +25,7 @@ function getInitialTheme() {
 }
 
 export default function App() {
-  const [devices, setDevices] = useState(starterDevices);
+  // const [devices, setDevices] = useState(starterDevices);
   const [theme, setTheme] = useState(getInitialTheme);
 
   useEffect(() => {
@@ -69,7 +69,7 @@ export default function App() {
             <Routes>
               <Route
                 path="/"
-                element={<DevicesPage devices={devices} setDevices={setDevices} />}
+                element={<DevicesPage />}
               />
               <Route path="/deployments" element={<DeploymentsPage />} />
               <Route path="/logs" element={<LogsPage />} />
